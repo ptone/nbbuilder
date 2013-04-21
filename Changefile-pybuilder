@@ -1,0 +1,4 @@
+from	shykes/pybuilder
+copy	requirements.txt	/requirements.txt
+run	pip -r requirements.txt
+copy	start	/start
