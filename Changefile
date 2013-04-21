@@ -1,0 +1,10 @@
+from	base
+run	echo 'deb http://archive.ubuntu.com/ubuntu quantal main universe multiverse' > /etc/apt/sources.list
+run	apt-get update
+run	DEBIAN_FRONTEND=noninteractive apt-get install -y -q git curl
+copy	git-wrapper	/usr/local/bin/git
+run	DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all
+run	DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-pip
+copy	requirements.txt	/requirements.txt
+run	pip -r requirements.txt
+copy	start	/start
