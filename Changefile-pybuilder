@@ -1,4 +1,5 @@
 from	shykes/pybuilder
+run	DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-dev
 run	/usr/bin/pip install -U pip
 copy	requirements.txt	/requirements.txt
 run	/usr/local/bin/pip install -r /requirements.txt
